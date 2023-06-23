@@ -7,11 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animation:{
+        slide_left: 'slideLeft 0.5s ease-in-out',
+        slide_right: 'slideRight 0.5s ease-in-out'
       },
+      keyframes: {
+        slideLeft: {
+          '0%': { transform: 'translate(100%)' },
+          '100%': { transform: 'translate(0px)' },
+        },
+        slideRight: {
+          '0%': {transform: 'translate(0px)' },
+          '100%': { transform: 'translate(100%)', hidden:true },
+        }
+      }
     },
   },
   plugins: [],
